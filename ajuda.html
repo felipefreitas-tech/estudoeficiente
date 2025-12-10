@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajuda</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ====== ESTILOS ESPECÍFICOS DO FORMULÁRIO ====== */
+
+    form {
+      width: 70%;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid white;
+      border-radius: 10px;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    fieldset {
+      border: 2px solid white;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    legend {
+      color: yellow;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      color: white;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: none;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: 2px solid yellow;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: 0.3s;
+    }
+
+    /* ====== BOTÃO ====== */
+    .botao-enviar {
+      background-color: yellow;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 25px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .botao-enviar:hover {
+      background-color: white;
+      transform: scale(1.05);
+    }
+
+    .botao-enviar:active {
+      transform: scale(0.95);
+    }
+
+    /* ====== TABELA ====== */
+    table {
+      width: 60%;
+      margin: 30px auto;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    th,
+    td {
+      border: 1px solid white;
+      padding: 10px;
+      color: white;
+    }
+
+    th {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ====== IFRAME ====== */
+    iframe {
+      width: 100%;
+      /* ocupa toda a largura disponível */
+      height: 400px;
+      /* altura ajustável */
+      border: 0;
+      /* remove a borda */
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navegacao">
+
+    <a href="index.html">Início</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Estudo ▾</button>
+      <div class="dropdown-content">
+        <a href="formaerrada.html">Você estuda de forma errada</a>
+        <a href="comoestudar.html">Como estudar?</a>
+        <a href="produtividademaxima.html">Produtividade máxima</a>
+        <a href="apsseferramentas.html">Apps e ferramentas</a>
+      </div>
+    </div>
+
+    <a href="ajuda.html">Ajuda</a>
+
+  </nav>
+
+  <header>
+    <h1>Ajuda</h1>
+    <p>Entre em contato diretamente com o autor do site:</p>
+  </header>
+
+  <section class="bloco">
+    <fieldset>
+      <legend>Informações de Contato</legend>
+      <p><strong>Nome:</strong> Felipe Vinicius Batista de Freitas</p>
+      <p><strong>E-mail:</strong>
+        <a href="mailto:felipe.freitas@estudante.iftm.edu.br">
+          felipe.freitas@estudante.iftm.edu.br
+        </a>
+      </p>
+      <p><strong>Localização:</strong> Uberaba - MG, Brasil</p>
+    </fieldset>
+  </section>
+
+  <section>
+    <h2>Envie sua mensagem</h2>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+
+        <p>
+          <label for="nome">Nome completo *</label>
+          <input type="text" id="nome" name="nome" placeholder="Ex: Fulanin Ciclano da Silva" required>
+        </p>
+
+        <p>
+          <label for="email">E-mail *</label>
+          <input type="email" id="email" name="email" placeholder="Ex: exemplo@gmail.com" required>
+        </p>
+
+        <p>
+          <label for="telefone">Celular *</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="Ex: (99) 4002-8922" required
+            pattern="\(\d{2}\)\s?\d{5}-\d{4}">
+        </p>
+
+        <p>
+          <label for="assunto">Assunto</label>
+          <select id="assunto" name="assunto">
+            <option value="">Selecione um assunto</option>
+            <option value="duvida">Dúvida</option>
+            <option value="sugestao">Sugestão</option>
+            <option value="elogio">Elogio</option>
+            <option value="outros">Outros</option>
+          </select>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Forma de Contato</legend>
+        <p>Sugestão: escolha uma forma preferida para contato.</p>
+        <label><input type="radio" name="contato" value="email" checked> E-mail</label>
+        <label><input type="radio" name="contato" value="telefone"> Telefone</label>
+        <label><input type="radio" name="contato" value="whatsapp"> WhatsApp</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Mensagem</legend>
+        <p>
+          <label for="mensagem">Escreva sua mensagem *</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem aqui..."
+            required></textarea>
+        </p>
+      </fieldset>
+
+      <p style="text-align:center;">
+        <button type="submit" class="botao-enviar" id="enviar">Enviar</button>
+      </p>
+    </form>
+  </section>
+
+  <section>
+    <h2>Horários de Atendimento</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Dia</th>
+          <th>Horário</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Segunda a Sexta</td>
+          <td>13h às 16h</td>
+        </tr>
+        <tr>
+          <td>Sábado</td>
+          <td>Não Trabalho - Dia do Senhor (Shabat)</td>
+        </tr>
+        <tr>
+          <td>Domingo</td>
+          <td>13h às 16h</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Localização</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.4961!2d-47.9325!3d-19.7472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b7b9e9c57b6ef9%3A0x91be5d09a4e3db6b!2sIFTM%20-%20Campus%20Uberaba!5e0!3m2!1spt-BR!2sbr!4v0000000000000"
+      width="600" height="450" style="border:1;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+
+  <footer>
+    <p>&copy; 2025 Estudo Eficiente. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+</html>
